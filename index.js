@@ -31,7 +31,7 @@ let items = [
         name: "Ergonomic Office Chair",
         description: "Total lumbar support and breathable mesh for maximum comfort during long work hours.",
         price: 450.00,
-        image: "https://images.unsplash.com/photo-1505843490701-5be5d0b19d58?q=80&w=1000&auto=format&fit=crop",
+        image: "https://images.pexels.com/photos/31726674/pexels-photo-31726674.jpeg",
         category: "Furniture"
     },
     {
@@ -45,6 +45,14 @@ let items = [
 ];
 
 // Routes
+
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
+
+
+
+
 app.get('/api/items', (req, res) => {
     res.json(items);
 });
@@ -76,8 +84,6 @@ app.post('/api/items', (req, res) => {
     res.status(201).json(newItem);
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+app.listen(PORT, () => { console.log(`Server is running on port ${PORT}`); });
 
 module.exports = app;
